@@ -1,0 +1,195 @@
+2026-02-20 22:26:18,284 - NLSN-Full - INFO - === NLSN Full Pipeline Run ===
+2026-02-20 22:26:18,284 - NLSN-Full - INFO -   Timestamp : 20260220_222618
+2026-02-20 22:26:18,286 - NLSN-Full - INFO -   Data      : F:\PyTorch_GPU\maritime_monitoring_preprocessing\interpolated_results\consolidated_ais_data_20200105_20200112.parquet
+2026-02-20 22:26:18,286 - NLSN-Full - INFO -   NLSN dir  : f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn
+2026-02-20 22:26:18,286 - NLSN-Full - INFO -   CUDA      : True
+2026-02-20 22:26:18,299 - NLSN-Full - INFO - [1/4] Loaded best PLSN from tuning CSV: K=1400 r=0.000005 nbr=4.0
+2026-02-20 22:26:18,301 - NLSN-Full - INFO - [2/4] Loading AIS data ...
+2026-02-20 22:26:18,302 - PLSN_Extraction.modules.data_loader - INFO - Loading data from F:\PyTorch_GPU\maritime_monitoring_preprocessing\interpolated_results\consolidated_ais_data_20200105_20200112.parquet...
+2026-02-20 22:26:18,645 - PLSN_Extraction.modules.data_loader - INFO - Successfully loaded 565906 rows.
+2026-02-20 22:26:18,651 - NLSN-Full - INFO -   Loaded 565906 rows, 17 columns
+2026-02-20 22:26:18,651 - NLSN-Full - INFO - [3/4] Starting gamma sweep (12 trials) ...
+2026-02-20 22:26:18,653 - PLSN_Extraction.modules.nlsn_tuner - INFO - NLSN sweep: 12 trials (gamma=12 x w1=1 x w2=1)
+2026-02-20 22:26:49,209 - PLSN_Extraction.modules.nlsn_tuner - INFO - Prepared 39281 trajectories (494335 points) for NLSN extraction.
+2026-02-20 22:27:10,630 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_1e-05_w1_1p0_w2_1p0\feature_points.csv (365923 rows)
+2026-02-20 22:27:10,630 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:27:11,712 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=2 points per unit. Dense units found=8827/11469.
+2026-02-20 22:27:11,793 - PLSN_Extraction.modules.clustering - INFO - Identified 1625 clusters. Clustered points=363281, noise=2642.
+2026-02-20 22:27:11,800 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:27:11,800 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:27:13,235 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 1084 valid boundaries.
+2026-02-20 22:27:13,240 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:27:13,530 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_1e-05_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:27:13,625 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_1e-05_w1_1p0_w2_1p0\nodes.csv (1084 rows)
+2026-02-20 22:27:13,630 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:27:14,078 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_1e-05_w1_1p0_w2_1p0\edges.csv (545 rows)
+2026-02-20 22:27:15,984 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_1e-05_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:27:16,039 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 1/12 | gamma=1e-05 w1=1.0 w2=1.0 | nodes=1084 edges=545 LD=1.2255 coverage=0.9928 score=0.8317 rt=26.79s
+2026-02-20 22:27:28,534 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_5e-05_w1_1p0_w2_1p0\feature_points.csv (205770 rows)
+2026-02-20 22:27:28,535 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:27:28,658 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=2 points per unit. Dense units found=7950/11150.
+2026-02-20 22:27:28,738 - PLSN_Extraction.modules.clustering - INFO - Identified 1650 clusters. Clustered points=202570, noise=3200.
+2026-02-20 22:27:28,742 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:27:28,742 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:27:29,933 - PLSN_Extraction.modules.boundary_extractor - INFO - Skipped 2 degenerate clusters before alpha-shape.
+2026-02-20 22:27:29,933 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 966 valid boundaries.
+2026-02-20 22:27:29,940 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:27:30,183 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_5e-05_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:27:30,285 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_5e-05_w1_1p0_w2_1p0\nodes.csv (966 rows)
+2026-02-20 22:27:30,287 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:27:30,611 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_5e-05_w1_1p0_w2_1p0\edges.csv (522 rows)
+2026-02-20 22:27:32,162 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_5e-05_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:27:32,199 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 2/12 | gamma=5e-05 w1=1.0 w2=1.0 | nodes=966 edges=522 LD=1.5142 coverage=0.9844 score=0.9302 rt=16.08s
+2026-02-20 22:27:43,292 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0001_w1_1p0_w2_1p0\feature_points.csv (173124 rows)
+2026-02-20 22:27:43,297 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:27:43,401 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=10766/10766.
+2026-02-20 22:27:43,459 - PLSN_Extraction.modules.clustering - INFO - Identified 1670 clusters. Clustered points=173124, noise=0.
+2026-02-20 22:27:43,467 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:27:43,467 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:27:44,470 - PLSN_Extraction.modules.boundary_extractor - INFO - Skipped 3 degenerate clusters before alpha-shape.
+2026-02-20 22:27:44,470 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 756 valid boundaries.
+2026-02-20 22:27:44,474 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:27:44,629 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0001_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:27:44,702 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0001_w1_1p0_w2_1p0\nodes.csv (756 rows)
+2026-02-20 22:27:44,705 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:27:45,033 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0001_w1_1p0_w2_1p0\edges.csv (375 rows)
+2026-02-20 22:27:46,511 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0001_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:27:46,543 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 3/12 | gamma=0.0001 w1=1.0 w2=1.0 | nodes=756 edges=375 LD=1.5796 coverage=1.0000 score=0.9555 rt=14.29s
+2026-02-20 22:27:55,642 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0002_w1_1p0_w2_1p0\feature_points.csv (153765 rows)
+2026-02-20 22:27:55,642 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:27:55,728 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=10177/10177.
+2026-02-20 22:27:55,787 - PLSN_Extraction.modules.clustering - INFO - Identified 1880 clusters. Clustered points=153765, noise=0.
+2026-02-20 22:27:55,791 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:27:55,791 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:27:56,676 - PLSN_Extraction.modules.boundary_extractor - INFO - Skipped 3 degenerate clusters before alpha-shape.
+2026-02-20 22:27:56,676 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 693 valid boundaries.
+2026-02-20 22:27:56,680 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:27:56,820 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0002_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:27:56,887 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0002_w1_1p0_w2_1p0\nodes.csv (693 rows)
+2026-02-20 22:27:56,891 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:27:57,210 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0002_w1_1p0_w2_1p0\edges.csv (377 rows)
+2026-02-20 22:27:58,541 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0002_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:27:58,571 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 4/12 | gamma=0.0002 w1=1.0 w2=1.0 | nodes=693 edges=377 LD=1.6182 coverage=1.0000 score=0.9711 rt=11.97s
+2026-02-20 22:28:08,035 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0005_w1_1p0_w2_1p0\feature_points.csv (133825 rows)
+2026-02-20 22:28:08,035 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:28:08,122 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=9346/9346.
+2026-02-20 22:28:08,203 - PLSN_Extraction.modules.clustering - INFO - Identified 2096 clusters. Clustered points=133825, noise=0.
+2026-02-20 22:28:08,207 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:28:08,207 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:28:08,991 - PLSN_Extraction.modules.boundary_extractor - INFO - Skipped 3 degenerate clusters before alpha-shape.
+2026-02-20 22:28:08,991 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 613 valid boundaries.
+2026-02-20 22:28:08,994 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:28:09,166 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0005_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:28:09,232 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0005_w1_1p0_w2_1p0\nodes.csv (613 rows)
+2026-02-20 22:28:09,238 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:28:09,546 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0005_w1_1p0_w2_1p0\edges.csv (381 rows)
+2026-02-20 22:28:10,895 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p0005_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:28:10,922 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 5/12 | gamma=0.0005 w1=1.0 w2=1.0 | nodes=613 edges=381 LD=1.6576 coverage=1.0000 score=0.9863 rt=12.30s
+2026-02-20 22:28:18,434 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p001_w1_1p0_w2_1p0\feature_points.csv (120446 rows)
+2026-02-20 22:28:18,434 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:28:18,779 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=8688/8688.
+2026-02-20 22:28:18,822 - PLSN_Extraction.modules.clustering - INFO - Identified 2195 clusters. Clustered points=120446, noise=0.
+2026-02-20 22:28:18,828 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:28:18,828 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:28:19,559 - PLSN_Extraction.modules.boundary_extractor - INFO - Skipped 3 degenerate clusters before alpha-shape.
+2026-02-20 22:28:19,559 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 556 valid boundaries.
+2026-02-20 22:28:19,564 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:28:19,709 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p001_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:28:19,775 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p001_w1_1p0_w2_1p0\nodes.csv (556 rows)
+2026-02-20 22:28:19,778 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:28:20,071 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p001_w1_1p0_w2_1p0\edges.csv (351 rows)
+2026-02-20 22:28:21,519 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p001_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:28:21,548 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 6/12 | gamma=0.001 w1=1.0 w2=1.0 | nodes=556 edges=351 LD=1.6833 coverage=1.0000 score=0.9979 rt=10.57s
+2026-02-20 22:28:28,438 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p002_w1_1p0_w2_1p0\feature_points.csv (108778 rows)
+2026-02-20 22:28:28,438 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:28:28,467 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=8119/8119.
+2026-02-20 22:28:28,509 - PLSN_Extraction.modules.clustering - INFO - Identified 2232 clusters. Clustered points=108778, noise=0.
+2026-02-20 22:28:28,513 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:28:28,513 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:28:29,128 - PLSN_Extraction.modules.boundary_extractor - INFO - Skipped 3 degenerate clusters before alpha-shape.
+2026-02-20 22:28:29,131 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 530 valid boundaries.
+2026-02-20 22:28:29,134 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:28:29,272 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p002_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:28:29,328 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p002_w1_1p0_w2_1p0\nodes.csv (530 rows)
+2026-02-20 22:28:29,330 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:28:29,640 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p002_w1_1p0_w2_1p0\edges.csv (311 rows)
+2026-02-20 22:28:30,889 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p002_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:28:30,916 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 7/12 | gamma=0.002 w1=1.0 w2=1.0 | nodes=530 edges=311 LD=1.7044 coverage=1.0000 score=1.0078 rt=9.32s
+2026-02-20 22:28:39,801 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p005_w1_1p0_w2_1p0\feature_points.csv (95899 rows)
+2026-02-20 22:28:39,801 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:28:39,874 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=7501/7501.
+2026-02-20 22:28:39,912 - PLSN_Extraction.modules.clustering - INFO - Identified 2183 clusters. Clustered points=95899, noise=0.
+2026-02-20 22:28:39,917 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:28:39,917 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:28:40,666 - PLSN_Extraction.modules.boundary_extractor - INFO - Skipped 3 degenerate clusters before alpha-shape.
+2026-02-20 22:28:40,666 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 509 valid boundaries.
+2026-02-20 22:28:40,674 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:28:40,797 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p005_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:28:40,855 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p005_w1_1p0_w2_1p0\nodes.csv (509 rows)
+2026-02-20 22:28:40,858 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:28:41,233 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p005_w1_1p0_w2_1p0\edges.csv (308 rows)
+2026-02-20 22:28:45,006 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p005_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:28:45,042 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 8/12 | gamma=0.005 w1=1.0 w2=1.0 | nodes=509 edges=308 LD=1.7239 coverage=1.0000 score=1.0164 rt=14.07s
+2026-02-20 22:28:52,007 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p01_w1_1p0_w2_1p0\feature_points.csv (88681 rows)
+2026-02-20 22:28:52,008 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:28:52,088 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=7194/7194.
+2026-02-20 22:28:52,123 - PLSN_Extraction.modules.clustering - INFO - Identified 2181 clusters. Clustered points=88681, noise=0.
+2026-02-20 22:28:52,125 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:28:52,125 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:28:52,680 - PLSN_Extraction.modules.boundary_extractor - INFO - Skipped 3 degenerate clusters before alpha-shape.
+2026-02-20 22:28:52,680 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 509 valid boundaries.
+2026-02-20 22:28:52,683 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:28:52,780 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p01_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:28:52,842 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p01_w1_1p0_w2_1p0\nodes.csv (509 rows)
+2026-02-20 22:28:52,844 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:28:53,115 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p01_w1_1p0_w2_1p0\edges.csv (323 rows)
+2026-02-20 22:28:54,541 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p01_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:28:54,570 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 9/12 | gamma=0.01 w1=1.0 w2=1.0 | nodes=509 edges=323 LD=1.6811 coverage=1.0000 score=1.0026 rt=9.47s
+2026-02-20 22:29:00,723 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p02_w1_1p0_w2_1p0\feature_points.csv (83430 rows)
+2026-02-20 22:29:00,723 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:29:00,748 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=6983/6983.
+2026-02-20 22:29:00,785 - PLSN_Extraction.modules.clustering - INFO - Identified 2227 clusters. Clustered points=83430, noise=0.
+2026-02-20 22:29:00,788 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:29:00,788 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:29:01,364 - PLSN_Extraction.modules.boundary_extractor - INFO - Skipped 3 degenerate clusters before alpha-shape.
+2026-02-20 22:29:01,365 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 524 valid boundaries.
+2026-02-20 22:29:01,365 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:29:01,471 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p02_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:29:01,526 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p02_w1_1p0_w2_1p0\nodes.csv (524 rows)
+2026-02-20 22:29:01,529 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:29:01,756 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p02_w1_1p0_w2_1p0\edges.csv (366 rows)
+2026-02-20 22:29:03,017 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p02_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:29:03,054 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 10/12 | gamma=0.02 w1=1.0 w2=1.0 | nodes=524 edges=366 LD=1.6436 coverage=1.0000 score=1.0020 rt=8.43s
+2026-02-20 22:29:08,242 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p05_w1_1p0_w2_1p0\feature_points.csv (79705 rows)
+2026-02-20 22:29:08,242 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:29:08,265 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=6787/6787.
+2026-02-20 22:29:08,305 - PLSN_Extraction.modules.clustering - INFO - Identified 2246 clusters. Clustered points=79705, noise=0.
+2026-02-20 22:29:08,311 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:29:08,312 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:29:08,884 - PLSN_Extraction.modules.boundary_extractor - INFO - Skipped 3 degenerate clusters before alpha-shape.
+2026-02-20 22:29:08,885 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 528 valid boundaries.
+2026-02-20 22:29:08,887 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:29:08,988 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p05_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:29:09,046 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p05_w1_1p0_w2_1p0\nodes.csv (528 rows)
+2026-02-20 22:29:09,048 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:29:09,281 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p05_w1_1p0_w2_1p0\edges.csv (366 rows)
+2026-02-20 22:29:10,594 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p05_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:29:10,626 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 11/12 | gamma=0.05 w1=1.0 w2=1.0 | nodes=528 edges=366 LD=1.6218 coverage=1.0000 score=0.9946 rt=7.52s
+2026-02-20 22:29:15,788 - PLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p1_w1_1p0_w2_1p0\feature_points.csv (78849 rows)
+2026-02-20 22:29:15,788 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 22:29:15,814 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=6717/6717.
+2026-02-20 22:29:15,847 - PLSN_Extraction.modules.clustering - INFO - Identified 2240 clusters. Clustered points=78849, noise=0.
+2026-02-20 22:29:15,849 - PLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-20 22:29:15,849 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-20 22:29:16,561 - PLSN_Extraction.modules.boundary_extractor - INFO - Skipped 3 degenerate clusters before alpha-shape.
+2026-02-20 22:29:16,561 - PLSN_Extraction.modules.boundary_extractor - INFO - Extracted 529 valid boundaries.
+2026-02-20 22:29:16,563 - PLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-20 22:29:16,673 - PLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p1_w1_1p0_w2_1p0\boundaries.geojson
+2026-02-20 22:29:16,732 - PLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p1_w1_1p0_w2_1p0\nodes.csv (529 rows)
+2026-02-20 22:29:16,736 - PLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-20 22:29:16,955 - PLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p1_w1_1p0_w2_1p0\edges.csv (365 rows)
+2026-02-20 22:29:18,195 - PLSN_Extraction.modules.visualizer - INFO - Saved enhanced PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\gamma_0p1_w1_1p0_w2_1p0\nlsn_map.html
+2026-02-20 22:29:18,228 - PLSN_Extraction.modules.nlsn_tuner - INFO - Trial 12/12 | gamma=0.1 w1=1.0 w2=1.0 | nodes=529 edges=365 LD=1.6053 coverage=1.0000 score=0.9884 rt=7.55s
+2026-02-20 22:29:18,302 - PLSN_Extraction.modules.nlsn_tuner - INFO - NLSN gamma sweep complete: f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn\nlsn_gamma_sweep_results.csv
+2026-02-20 22:29:18,344 - NLSN-Full - INFO -   Sweep done: 12 trials recorded.
+2026-02-20 22:29:18,344 - NLSN-Full - INFO - [4/4] Pipeline complete.

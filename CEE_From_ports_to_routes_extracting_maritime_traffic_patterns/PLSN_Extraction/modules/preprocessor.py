@@ -38,12 +38,12 @@ class AISPreprocessor:
         self.logger.info("Preprocessing AIS data for anchoring/mooring points...")
         initial_count = len(df)
 
-        nav_col = self._pick_column(df, ["NAVSTATUS", "Navigation Status", "STATUS"])
-        sog_col = self._pick_column(df, ["SOG", "Speed Over Ground", "speed"])
-        lat_col = self._pick_column(df, ["LAT", "Latitude"])
-        lon_col = self._pick_column(df, ["LON", "Longitude"])
-        mmsi_col = self._pick_column(df, ["MMSI"])
-        time_col = self._pick_column(df, ["BASEDATETIME", "Timestamp", "DATETIME"], required=False)
+        nav_col  = self._pick_column(df, ["NAVSTATUS", "Status", "Navigation Status", "STATUS", "status"])
+        sog_col  = self._pick_column(df, ["SOG", "Speed Over Ground", "speed"])
+        lat_col  = self._pick_column(df, ["LAT", "Latitude", "lat"])
+        lon_col  = self._pick_column(df, ["LON", "Longitude", "lon"])
+        mmsi_col = self._pick_column(df, ["MMSI", "mmsi"])
+        time_col = self._pick_column(df, ["BASEDATETIME", "BaseDateTime", "Timestamp", "DATETIME", "datetime"], required=False)
 
         work = df.copy()
         work[nav_col] = pd.to_numeric(work[nav_col], errors="coerce")

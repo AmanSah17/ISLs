@@ -5,7 +5,18 @@ import math
 import os
 import time
 import gc
-import resource
+import sys
+# 'resource' is Linux/macOS only — use psutil instead on all platforms.
+try:
+    import resource as _resource_mod
+    _HAS_RESOURCE = True
+except ImportError:
+    _HAS_RESOURCE = False
+try:
+    import psutil as _psutil
+    _HAS_PSUTIL = True
+except ImportError:
+    _HAS_PSUTIL = False
 from dataclasses import dataclass
 
 import pandas as pd
@@ -39,8 +50,8 @@ class CLIQUEHyperparameterTuner:
 
     @staticmethod
     def _rss_mb() -> float:
-        # Prefer current RSS (not peak RSS) so memory cap behaves predictably.
-        # /proc/self/statm: second field is resident pages.
+        """Return current RSS memory in MiB (cross-platform)."""
+        # Linux: fastest path via /proc/self/statm
         try:
             with open("/proc/self/statm", "r", encoding="utf-8") as f:
                 parts = f.read().strip().split()
@@ -50,12 +61,21 @@ class CLIQUEHyperparameterTuner:
                 return (resident_pages * page_size) / (1024.0 * 1024.0)
         except Exception:
             pass
-
-        # Fallback to max RSS if current RSS is unavailable.
-        rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-        if rss <= 0:
-            return 0.0
-        return float(rss) / 1024.0
+        # psutil — works on Windows, macOS, Linux
+        if _HAS_PSUTIL:
+            try:
+                return _psutil.Process().memory_info().rss / (1024.0 * 1024.0)
+            except Exception:
+                pass
+        # Unix resource module fallback (Linux/macOS)
+        if _HAS_RESOURCE:
+            try:
+                rss = _resource_mod.getrusage(_resource_mod.RUSAGE_SELF).ru_maxrss
+                if rss > 0:
+                    return float(rss) / 1024.0
+            except Exception:
+                pass
+        return 0.0
 
     @staticmethod
     def _normalize_min_dense(value) -> str:

@@ -1,0 +1,13 @@
+2026-02-20 22:24:46,412 - NLSN-Full - INFO - === NLSN Full Pipeline Run ===
+2026-02-20 22:24:46,414 - NLSN-Full - INFO -   Timestamp : 20260220_222446
+2026-02-20 22:24:46,414 - NLSN-Full - INFO -   Data      : F:\PyTorch_GPU\maritime_monitoring_preprocessing\interpolated_results\consolidated_ais_data_20200105_20200112.parquet
+2026-02-20 22:24:46,414 - NLSN-Full - INFO -   NLSN dir  : f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\CEE_From_ports_to_routes_extracting_maritime_traffic_patterns\PLSN_Extraction\results\nlsn
+2026-02-20 22:24:46,414 - NLSN-Full - INFO -   CUDA      : True
+2026-02-20 22:24:46,427 - NLSN-Full - INFO - [1/4] Loaded best PLSN from tuning CSV: K=1400 r=0.000005 nbr=4.0
+2026-02-20 22:24:46,427 - NLSN-Full - INFO - [2/4] Loading AIS data ...
+2026-02-20 22:24:46,427 - PLSN_Extraction.modules.data_loader - INFO - Loading data from F:\PyTorch_GPU\maritime_monitoring_preprocessing\interpolated_results\consolidated_ais_data_20200105_20200112.parquet...
+2026-02-20 22:24:46,775 - PLSN_Extraction.modules.data_loader - INFO - Successfully loaded 565906 rows.
+2026-02-20 22:24:46,775 - NLSN-Full - INFO -   Loaded 565906 rows, 17 columns
+2026-02-20 22:24:46,775 - NLSN-Full - INFO - [3/4] Starting gamma sweep (12 trials) ...
+2026-02-20 22:24:46,775 - PLSN_Extraction.modules.nlsn_tuner - INFO - NLSN sweep: 12 trials (gamma=12 x w1=1 x w2=1)
+2026-02-20 22:25:14,368 - PLSN_Extraction.modules.nlsn_tuner - INFO - Prepared 39281 trajectories (494335 points) for NLSN extraction.

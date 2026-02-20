@@ -1,0 +1,11 @@
+2026-02-20 21:58:32,944 - Hyperparam-Comparison - INFO - Loading data from F:\PyTorch_GPU\maritime_monitoring_preprocessing\interpolated_results\consolidated_ais_data_20200105_20200112.parquet
+2026-02-20 21:58:32,944 - PLSN_Extraction.modules.data_loader - INFO - Loading data from F:\PyTorch_GPU\maritime_monitoring_preprocessing\interpolated_results\consolidated_ais_data_20200105_20200112.parquet...
+2026-02-20 21:58:33,155 - PLSN_Extraction.modules.data_loader - INFO - Successfully loaded 565906 rows.
+2026-02-20 21:58:33,156 - PLSN_Extraction.modules.preprocessor - INFO - Preprocessing AIS data for anchoring/mooring points...
+2026-02-20 21:58:33,223 - PLSN_Extraction.modules.preprocessor - INFO - Filtered 565906 rows -> 86951 anchoring/mooring points (anchor=15925, moored=71026).
+2026-02-20 21:58:33,234 - Hyperparam-Comparison - INFO - Stationary candidate rows: 86951
+2026-02-20 21:58:33,278 - PLSN_Extraction.modules.hyperparameter_tuner - INFO - Starting CLIQUE hyperparameter sweep with 264 trials...
+2026-02-20 21:58:33,285 - PLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=20, r=0.00000500, min_dense_points=None, neighbor_mode=4, require_cuda=True)
+2026-02-20 21:58:34,265 - PLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=48/48.
+2026-02-20 21:58:34,275 - PLSN_Extraction.modules.clustering - INFO - Identified 6 clusters. Clustered points=86951, noise=0.
+2026-02-20 21:58:34,298 - PLSN_Extraction.modules.hyperparameter_tuner - INFO - Trial 1/264 | K=20 r=0.0000050 mode=4 min_dense=None | clusters=6 effective_ports=6 score=0.5489 runtime=0.99s rss=514.4MB
