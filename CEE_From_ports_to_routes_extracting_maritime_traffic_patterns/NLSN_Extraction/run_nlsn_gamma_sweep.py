@@ -137,7 +137,7 @@ def load_best_plsn_params(
 def parse_args():
     default_full_data = "/home/crimsondeepdarshak/Desktop/Deep_Darshak/AIS_data_demo/plsn_jan2025_31days_results/data/jan2025_full_minimal.parquet"
     if not os.path.exists(default_full_data):
-        default_full_data = config.DATA_FILE_PATH
+        default_full_data = config.FULL_DATA_PATH
 
     default_plsn_summary = "/home/crimsondeepdarshak/Desktop/Deep_Darshak/AIS_data_demo/plsn_jan2025_31days_results/tuning/expanded_hyperparam_sweep_summary.json"
     default_plsn_results = "/home/crimsondeepdarshak/Desktop/Deep_Darshak/AIS_data_demo/plsn_jan2025_31days_results/tuning/expanded_hyperparam_sweep_results.csv"

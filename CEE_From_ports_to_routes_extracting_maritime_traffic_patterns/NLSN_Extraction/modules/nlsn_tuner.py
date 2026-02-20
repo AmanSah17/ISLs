@@ -5,7 +5,6 @@ import json
 import logging
 import math
 import os
-import resource
 import time
 from dataclasses import dataclass
 from datetime import datetime
@@ -13,6 +12,11 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
+
+try:
+    import resource  # Unix
+except Exception:  # pragma: no cover
+    resource = None
 
 from NLSN_Extraction.modules.adaptive_dp import AdaptiveDPOptimizer
 from NLSN_Extraction.modules.boundary_extractor import BoundaryExtractor
@@ -69,8 +73,19 @@ class NLSNGammaTuner:
                 return (resident_pages * page_size) / (1024.0 * 1024.0)
         except Exception:
             pass
-        rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-        return float(rss) / 1024.0 if rss > 0 else 0.0
+        if resource is not None:
+            try:
+                rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+                return float(rss) / 1024.0 if rss > 0 else 0.0
+            except Exception:
+                pass
+        try:
+            import psutil  # type: ignore
+
+            rss = psutil.Process(os.getpid()).memory_info().rss
+            return float(rss) / (1024.0 * 1024.0)
+        except Exception:
+            return 0.0
 
     @staticmethod
     def _pick_column(df: pd.DataFrame, candidates: list[str], required: bool = True) -> str | None:
