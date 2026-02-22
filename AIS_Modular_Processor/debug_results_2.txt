@@ -1,0 +1,6 @@
+Fetched 272 points from DuckDB.
+ais_gdf bounds: [-115.78047   21.87429 -112.41753   28.77755]
+region_gdf bounds: [-115.795901   19.285896 -104.326174   33.062168]
+region_gdf CRS: EPSG:4326
+Points after exact polygon clip (within): 0
+Points after exact polygon clip (intersects): 0

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Network Dashboard</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-inter h-screen flex flex-col overflow-hidden">
+
+    <!-- Top Navigation -->
+    <nav class="glass-header flex items-center justify-between px-6 py-4 fixed top-0 w-full z-[1000]">
+        <div class="flex items-center space-x-4">
+            <h1
+                class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 drop-shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                Integrated PLSN/NLSN/RLSN Viewer
+            </h1>
+        </div>
+        <div class="flex items-center space-x-6">
+            <label class="text-sm text-gray-400 font-medium">Select Run Instance:</label>
+            <select id="run-selector"
+                class="glass-panel px-4 py-2 rounded-lg text-white border border-gray-700 bg-gray-800 focus:outline-none focus:border-blue-500 transition-colors w-64 text-sm hover-grow cursor-pointer shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                <option value="">-- Load a Run --</option>
+            </select>
+            <a href="index.html" class="glass-button px-4 py-2 hover:bg-gray-700 text-sm font-medium">Back to
+                Extraction</a>
+        </div>
+    </nav>
+
+    <!-- Main Map Container -->
+    <div id="integrated-map" class="flex-grow w-full relative z-[1] mt-16 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)]">
+    </div>
+
+    <!-- Status Overlay -->
+    <div id="loading-overlay"
+        class="fixed inset-0 bg-gray-900/80 backdrop-blur-sm z-[2000] flex flex-col items-center justify-center hidden">
+        <div
+            class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500 mb-4 shadow-[0_0_15px_rgba(56,189,248,0.8)]">
+        </div>
+        <h2 id="loading-text"
+            class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">Loading
+            Geometries...</h2>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Custom Logic -->
+    <script src="integrated.js"></script>
+</body>
+
+</html>

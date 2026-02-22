@@ -1,0 +1,45 @@
+# Large Nested Repos / Data
+AIS_Modular_Processor/uploads/*.parquet
+AIS_Modular_Processor/uploads/*.csv
+AIS_Modular_Processor/outputs/
+AIS_Modular_Processor/data/*.duckdb
+AIS_Modular_Processor/data/*.wal
+AIS_Modular_Processor/*.db
+CEE-International_shipping_lanes_/
+AIS_Modular_Processor/__pycache__/
+AIS_Modular_Processor/node_modules/
+AIS_Modular_Processor/.venv/
+AIS_Modular_Processor/env/
+
+# General Python
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# User-specific / System
+.DS_Store
+Thumbs.db
+.gemini/
+.agents/
+.agent/
+_agents/
+_agent/
+brain/
+logs/
+
+# Temporary run files
+paper_full.txt
+rlsn_files.txt
+sample_ais_data.csv
+temporary_file_list.txt
+temporary_file_list_utf8.txt
+test_global_region.geojson
+bulk_*.json
+fix_*.py
+refactor_*.py
+update_*.py
+test_*.py
+!test_staged_pipeline.py

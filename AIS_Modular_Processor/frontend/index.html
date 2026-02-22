@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS Modular Analysis Hub</title>
+    <!-- Dependencies -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass">
+            <header>
+                <div class="logo">
+                    <span class="pulse"></span>
+                    <h1>AIS Core</h1>
+                </div>
+            </header>
+
+            <div class="flex items-center space-x-3">
+                <button onclick="clearGeoJSON()"
+                    class="glass-button px-4 py-2 hover:bg-gray-700 text-sm font-medium">Clear Canvas</button>
+                <button onclick="toggleGeoJsonVisibility()"
+                    class="glass-button px-4 py-2 hover:bg-gray-700 text-sm font-medium">Toggle View</button>
+                <a href="integrated.html"
+                    class="glass-button px-4 py-2 bg-blue-600/30 hover:bg-blue-600/50 text-sm font-medium ml-4 border border-blue-500/50">Integrated
+                    View &rarr;</a>
+            </div>
+            <nav class="tool-tabs">
+                <button class="tab-btn active" data-tab="upload">Upload</button>
+                <button class="tab-btn" data-tab="tuning">Tuning</button>
+                <button class="tab-btn" data-tab="results">Results</button>
+            </nav>
+
+            <div class="tab-content">
+                <!-- Data Upload Tab -->
+                <section id="upload-tab" class="active">
+                    <div class="card">
+                        <h3>Dataset</h3>
+                        <p class="desc">Select AIS Parquet or CSV file</p>
+                        <input type="file" id="ais-file-input" hidden>
+                        <button class="btn primary full-width"
+                            onclick="document.getElementById('ais-file-input').click()">Choose File</button>
+                        <div id="file-status" class="status-msg"></div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Region Management</h3>
+                        <p class="desc">Draw area on map or select saved</p>
+                        <select id="saved-regions" class="input-field">
+                            <option value="">-- Custom Drawing --</option>
+                        </select>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn secondary full-width" onclick="saveCurrentRegion()">Save</button>
+                            <button class="btn secondary full-width" onclick="toggleRegionView()">Toggle View</button>
+                        </div>
+                    </div>
+
+                    <button class="btn run-btn" onclick="startAnalysis()">Start Processing</button>
+                </section>
+
+                <!-- Hyperparameter Tuning Tab -->
+                <section id="tuning-tab">
+                    <div class="card">
+                        <h3>GPU Tuning (K-R Sweep)</h3>
+                        <div class="input-group">
+                            <label>K Values (Grid Size)</label>
+                            <input type="text" id="k-values" value="200, 500, 1400" placeholder="e.g. 200, 1400">
+                        </div>
+                        <div class="input-group">
+                            <label>R Values (Density)</label>
+                            <input type="text" id="r-values" value="0.0001, 0.00005" placeholder="e.g. 0.0001">
+                        </div>
+                    </div>
+                    <canvas id="tuning-chart"></canvas>
+                </section>
+
+                <!-- Results History Tab -->
+                <section id="results-tab">
+                    <div id="runs-list" class="scrollable">
+                        <p class="empty-state">No recent runs</p>
+                    </div>
+                </section>
+            </div>
+        </aside>
+
+        <!-- Main Map Area -->
+        <main class="map-wrapper">
+            <div id="map"></div>
+
+            <!-- Real-time Status Overlay -->
+            <div id="status-overlay" class="glass hidden">
+                <div class="spinner"></div>
+                <div class="status-info" style="min-width: 300px;">
+                    <h4 id="status-title">Processing...</h4>
+                    <p id="status-desc">Executing GPU Kernels</p>
+                    <div id="progress-container" style="display: none; width: 100%; margin-top: 15px;">
+                        <div style="background: #334155; height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div id="status-progress-bar"
+                                style="width: 0%; background: #38bdf8; height: 100%; transition: width 0.3s ease;">
+                            </div>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; margin-top: 5px; font-size: 0.8rem; color: #94a3b8;">
+                            <span id="status-percent">0%</span>
+                            <span id="status-time">Elapsed: 0.0s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
