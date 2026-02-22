@@ -1,55 +1,64 @@
 # Methodology: Multiscale Maritime Network Extraction
 
-This document details the technical approach used to extract and visualize maritime networks at two distinct scales: **Macro (PLSN)** and **Meso (NLSN)**.
+This document provides a technical and mathematical foundation for the extraction of maritime networks at three resolutions: **Macro (PLSN)**, **Meso (NLSN)**, and **Route (RLSN)**.
 
 ---
 
 ## 1. Macro-scale: Ports to Shipping Lanes (PLSN)
-The PLSN scale identifies major global ports and the deep-sea shipping lanes that connect them.
+The PLSN scale identifies primary maritime infrastructure (ports) and the high-volume lanes connecting them.
 
 ### Stationary Point Detection (Anchoring & Mooring)
-We utilize **AIS Message 1 (Dynamic Report)** and **Message 5 (Static and Voyage Data)** to identify vessels that are not in transit.
-*   **Anchoring (NAVSTATUS 1)**: Vessels waiting at sea near a port.
-*   **Mooring (NAVSTATUS 5)**: Vessels physically at a berth or jetty.
+We define a point $p$ as **Stationary** ($P_S$) if it belongs to the subset of AIS reports where the vessel is not moving. Using AIS Message 1 (Dynamic) and Message 5 (Static/Voyage), we apply the following logic:
 
-**Classification Heuristics:**
-Points are classified as "Stationary" if they satisfy:
-1.  `NAVSTATUS` is either `1` (Anchored) or `5` (Moored).
-2.  `Speed Over Ground (SOG)` is consistently below **0.5 knots**.
-
-These points are then clustered to form **Port Level Boundaries**, representing the jurisdictional and operational areas of maritime hubs.
+**Mathematical Definition:**
+$$P_S = \{ p \in \text{AIS} \mid V_p < V_{threshold} \land S_p \in \{1, 5\} \}$$
+Where:
+- $V_p$ is the reported **Speed Over Ground (SOG)**.
+- $V_{threshold}$ is typically $0.5$ knots.
+- $S_p$ is the **Navigation Status** (1 = Anchored, 5 = Moored).
 
 ---
 
 ## 2. Meso-scale: Non-Local Shipping Network (NLSN)
-The NLSN scale identifies waypoint hubs—regions where vessels do not stop but exhibit distinct changes in their navigational behavior.
+The NLSN scale focuses on **Waypoints**—critical decision points where vessels change course or speed without stopping.
 
-### Abrupt Trajectory Changes (Douglas-Peucker)
-Instead of searching for low speed, NLSN focuses on **Dynamic Transitions**. We use the **Douglas-Peucker (DP)** algorithm to simplify vessel trajectories and extract "Feature Points".
-*   **Waypoints**: Feature points represent "corners" in a trajectory where a vessel significantly changes its **Heading** or **Speed**.
-*   **Restored Trajectories**: By connecting these feature points chronologically for each `trajectory_id`, we reconstruct the high-fidelity path segments.
+### Trajectory Simplification (Douglas-Peucker)
+Individual vessel trajectories $T = \{c_1, c_2, ..., c_n\}$ are simplified using the **Douglas-Peucker (DP)** algorithm.
 
-These "abrupt change" regions are clustered to form **NLSN Hub Boundaries**, identifying critical maritime waypoints, choke points, and tactical maneuver areas.
+**Mechanism:**
+For a segment between points $A$ and $B$, the algorithm finds the point $P$ with the maximum perpendicular distance $d$ from line segment $AB$.
+- If $d > \epsilon$ (where $\epsilon$ is our **Gamma** parameter): The point $P$ is kept as a **Feature Point** (corner).
+- If $d \le \epsilon$: All points between $A$ and $B$ are discarded.
 
----
-
-## 3. Clustering Engine: CLIQUE
-Both scales share a common clustering core based on the **CLIQUE (CLustering In QUEst)** algorithm.
-
-### Grid-Based Subspace Clustering
-CLIQUE is used because it handles massive AIS datasets efficiently by discretizing the geographical space into a grid.
-*   **Hyperparameter $K$**: Defines the number of grid divisions (granularity).
-*   **Hyperparameter $r$**: Defines the density threshold (minimum points/area) required to form a cluster.
-
-### Boundary Extraction
-Once clusters are identified, we use **Alpha-Shapes (Concave Hulls)** to generate tight-fitting GeoJSON boundaries around the point clouds. This differentiates "open sea" from "active maritime zones".
+**Mathematical Formalism:**
+$$\Phi = \{ p \in T \mid \text{perpendicular\_distance}(p, \text{segment}(p_{prev}, p_{next})) > \epsilon \}$$
 
 ---
 
-## 4. Integration & Visualization
-The `IntegratedVisualizer` overlays these scales:
-*   **Macro (Red)**: Large port boundaries and high-volume inter-port traffic.
-*   **Meso (Green)**: Finer waypoint hubs and detailed trajectory segments (Restored Segments).
-*   **Context (Heatmap)**: Background AIS density provides the "ground truth" traffic flow.
+## 3. Route-scale: Route-Level Shipping Network (RLSN)
+The RLSN provides the highest resolution, characterizing the statistical spread of traffic along established lanes.
 
-By adjusting the hyperparameters ($K$, $r$, $\gamma$), users can explore how the shipping network simplifies or complexifies at different resolutions.
+### Slice-based Traffic Flow Fitting
+For each edge between waypoints $A$ and $B$, we generate $M$ normal cross-sections (slices). AIS points $p$ are projected onto the normal vector $\vec{N}$ of the edge.
+
+**Gaussian Probability Density Function (PDF):**
+We fit the cross-sectional distribution using the Gaussian function:
+$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+Where:
+- $\mu$: The **Centroid** of the traffic flow (Customary Route).
+- $\sigma$: The **Lateral Spread** (Navigational variance).
+
+### Channel Boundary (3-Sigma Rule)
+The spatial extent of the shipping lane is defined by the interval $[\mu - 3\sigma, \mu + 3\sigma]$. This encompasses 99.7% of all vessel transit behaviors, effectively identifying the "safe" navigational corridor.
+
+---
+
+## 4. Clustering Engine: CLIQUE (Subspace Clustering)
+Both PLSN and NLSN scales utilize the **CLIQUE** algorithm for spatial partitioning.
+
+**Formalism:**
+1.  **Grid Partitioning**: Divide the 2D space (Lat/Lon) into $K \times K$ units.
+2.  **Dense Unit Identification**: A unit $u$ is "dense" if its point count $C_u$ exceeds a threshold $\tau$:
+    $$u \in \text{DenseUnits} \iff C_u > \tau$$
+    Where $\tau = \text{density\_threshold\_r} \times N_{points}$.
+3.  **Region Growing**: Connected dense units are merged into clusters $C_i$ using a graph-connectivity approach.

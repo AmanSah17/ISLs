@@ -104,6 +104,11 @@ def run_pipeline_for_params(
     # Network artefacts
     generator = PLSNGenerator(output_dir=output_dir)
     nodes_df  = generator.export_nodes_and_boundaries(boundaries, clustered_df=clustered_df)
+    
+    # Save clustered feature points for track reconstruction in integrated portal
+    if clustered_df is not None:
+        clustered_df.to_csv(os.path.join(output_dir, "feature_points.csv"), index=False)
+
     if nodes_df is None or nodes_df.empty:
         nodes_df = pd.DataFrame(columns=["port_id", "lat", "lon", "area_deg2", "stationary_points"])
     valid_port_ids = set(nodes_df["port_id"].astype(int).tolist()) if not nodes_df.empty else set()
