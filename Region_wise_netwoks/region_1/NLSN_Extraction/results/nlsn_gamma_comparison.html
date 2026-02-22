@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NLSN Gamma Sweep</title>
+  <style>
+    body { margin: 0; font-family: Segoe UI, sans-serif; background: #f8fafc; color: #111827; }
+    .wrap { padding: 16px; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; margin-bottom: 14px; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th, td { border-bottom: 1px solid #e5e7eb; padding: 6px; text-align: left; }
+    th { background: #f3f4f6; }
+    iframe { width: 100%; height: 720px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; }
+    .scroll { max-height: 380px; overflow: auto; border: 1px solid #e5e7eb; border-radius: 8px; }
+    .row { display: grid; grid-template-columns: 1fr 2fr; gap: 12px; }
+    @media (max-width: 1000px) { .row { grid-template-columns: 1fr; } iframe { height: 520px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h2>NLSN Gamma Hyperparameter Comparison</h2>
+    <p>Generated: 2026-02-22T19:15:01</p>
+    <div class="card">
+      <div class="row">
+        <div>
+          <label for="map-select"><b>Select gamma map:</b></label>
+          <select id="map-select" style="width:100%;padding:8px;"></select>
+          <div class="scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Gamma</th><th>Score</th><th>Nodes</th><th>Edges</th><th>Transitions</th>
+                  <th>Dr</th><th>Dl</th><th>LD</th><th>Coverage</th><th>Map</th>
+                </tr>
+              </thead>
+              <tbody><tr><td>0.02</td><td>1.0680</td><td>916</td><td>5972</td><td>18761</td><td>0.7929</td><td>0.9071</td><td>1.7000</td><td>1.0000</td><td><a href='gamma_0p02\nlsn_map.html' target='_blank'>Open Map</a></td></tr><tr><td>0.05</td><td>1.0657</td><td>776</td><td>5540</td><td>15663</td><td>0.8393</td><td>0.8417</td><td>1.6809</td><td>1.0000</td><td><a href='gamma_0p05\nlsn_map.html' target='_blank'>Open Map</a></td></tr><tr><td>0.01</td><td>1.0619</td><td>969</td><td>5949</td><td>19859</td><td>0.7574</td><td>0.9328</td><td>1.6901</td><td>1.0000</td><td><a href='gamma_0p01\nlsn_map.html' target='_blank'>Open Map</a></td></tr><tr><td>0.1</td><td>1.0473</td><td>685</td><td>4825</td><td>11970</td><td>0.8711</td><td>0.7546</td><td>1.6257</td><td>1.0000</td><td><a href='gamma_0p1\nlsn_map.html' target='_blank'>Open Map</a></td></tr><tr><td>0.005</td><td>1.0456</td><td>1058</td><td>6055</td><td>19790</td><td>0.7233</td><td>0.9492</td><td>1.6725</td><td>1.0000</td><td><a href='gamma_0p005\nlsn_map.html' target='_blank'>Open Map</a></td></tr><tr><td>0.002</td><td>1.0332</td><td>1151</td><td>6205</td><td>20331</td><td>0.6799</td><td>0.9651</td><td>1.6450</td><td>1.0000</td><td><a href='gamma_0p002\nlsn_map.html' target='_blank'>Open Map</a></td></tr><tr><td>0.001</td><td>1.0236</td><td>1214</td><td>6399</td><td>20819</td><td>0.6493</td><td>0.9725</td><td>1.6218</td><td>1.0000</td><td><a href='gamma_0p001\nlsn_map.html' target='_blank'>Open Map</a></td></tr><tr><td>0.0005</td><td>1.0139</td><td>1261</td><td>6449</td><td>21126</td><td>0.6209</td><td>0.9769</td><td>1.5979</td><td>1.0000</td><td><a href='gamma_0p0005\nlsn_map.html' target='_blank'>Open Map</a></td></tr><tr><td>0.0002</td><td>1.0013</td><td>1341</td><td>6708</td><td>21617</td><td>0.5847</td><td>0.9807</td><td>1.5654</td><td>1.0000</td><td><a href='gamma_0p0002\nlsn_map.html' target='_blank'>Open Map</a></td></tr><tr><td>0.0001</td><td>0.9906</td><td>1399</td><td>6854</td><td>22017</td><td>0.5509</td><td>0.9854</td><td>1.5363</td><td>1.0000</td><td><a href='gamma_0p0001\nlsn_map.html' target='_blank'>Open Map</a></td></tr><tr><td>5e-05</td><td>0.9564</td><td>1297</td><td>6854</td><td>22029</td><td>0.4936</td><td>0.9899</td><td>1.4835</td><td>0.9050</td><td><a href='gamma_5e-05\nlsn_map.html' target='_blank'>Open Map</a></td></tr><tr><td>1e-05</td><td>0.8677</td><td>1432</td><td>7041</td><td>22606</td><td>0.2058</td><td>0.9992</td><td>1.2050</td><td>0.9387</td><td><a href='gamma_1e-05\nlsn_map.html' target='_blank'>Open Map</a></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <iframe id="map-frame" src="gamma_0p02\nlsn_map.html"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const methods = [{"label": "gamma=0.02 | score=1.0680", "gamma": 0.02, "score": 1.0679810196576995, "nodes": 916, "edges": 5972, "transitions": 18761, "compression_rate_dr": 0.7928985811141399, "distance_similarity_dl": 0.907083037445266, "ld_score": 1.6999816185594059, "cluster_coverage": 1.0, "map_rel": "gamma_0p02\\nlsn_map.html"}, {"label": "gamma=0.05 | score=1.0657", "gamma": 0.05, "score": 1.0657207564712867, "nodes": 776, "edges": 5540, "transitions": 15663, "compression_rate_dr": 0.8392535122667226, "distance_similarity_dl": 0.8416797666685528, "ld_score": 1.6809332789352753, "cluster_coverage": 1.0, "map_rel": "gamma_0p05\\nlsn_map.html"}, {"label": "gamma=0.01 | score=1.0619", "gamma": 0.01, "score": 1.0619380172823256, "nodes": 969, "edges": 5949, "transitions": 19859, "compression_rate_dr": 0.757372847790126, "distance_similarity_dl": 0.932755981529127, "ld_score": 1.690128829319253, "cluster_coverage": 1.0, "map_rel": "gamma_0p01\\nlsn_map.html"}, {"label": "gamma=0.1 | score=1.0473", "gamma": 0.1, "score": 1.0472557964989722, "nodes": 685, "edges": 4825, "transitions": 11970, "compression_rate_dr": 0.8711167027795252, "distance_similarity_dl": 0.7545749472321189, "ld_score": 1.6256916500116443, "cluster_coverage": 1.0, "map_rel": "gamma_0p1\\nlsn_map.html"}, {"label": "gamma=0.005 | score=1.0456", "gamma": 0.005, "score": 1.0455870038845578, "nodes": 1058, "edges": 6055, "transitions": 19790, "compression_rate_dr": 0.7233335663195173, "distance_similarity_dl": 0.9491907864469734, "ld_score": 1.6725243527664908, "cluster_coverage": 1.0, "map_rel": "gamma_0p005\\nlsn_map.html"}, {"label": "gamma=0.002 | score=1.0332", "gamma": 0.002, "score": 1.0331608680958577, "nodes": 1151, "edges": 6205, "transitions": 20331, "compression_rate_dr": 0.679881643018569, "distance_similarity_dl": 0.9650960939508153, "ld_score": 1.6449777369693843, "cluster_coverage": 1.0, "map_rel": "gamma_0p002\\nlsn_map.html"}, {"label": "gamma=0.001 | score=1.0236", "gamma": 0.001, "score": 1.0235795460548927, "nodes": 1214, "edges": 6399, "transitions": 20819, "compression_rate_dr": 0.649257939004217, "distance_similarity_dl": 0.9725284754549386, "ld_score": 1.6217864144591556, "cluster_coverage": 1.0, "map_rel": "gamma_0p001\\nlsn_map.html"}, {"label": "gamma=0.0005 | score=1.0139", "gamma": 0.0005, "score": 1.0139433740345083, "nodes": 1261, "edges": 6449, "transitions": 21126, "compression_rate_dr": 0.6209314787633093, "distance_similarity_dl": 0.9769197023120266, "ld_score": 1.597851181075336, "cluster_coverage": 1.0, "map_rel": "gamma_0p0005\\nlsn_map.html"}, {"label": "gamma=0.0002 | score=1.0013", "gamma": 0.0002, "score": 1.0013455634394495, "nodes": 1341, "edges": 6708, "transitions": 21617, "compression_rate_dr": 0.5846555299270753, "distance_similarity_dl": 0.980719407610022, "ld_score": 1.565374937537097, "cluster_coverage": 1.0, "map_rel": "gamma_0p0002\\nlsn_map.html"}, {"label": "gamma=0.0001 | score=0.9906", "gamma": 0.0001, "score": 0.9906188078143664, "nodes": 1399, "edges": 6854, "transitions": 22017, "compression_rate_dr": 0.5508585540877426, "distance_similarity_dl": 0.9854347856414657, "ld_score": 1.5362933397292085, "cluster_coverage": 1.0, "map_rel": "gamma_0p0001\\nlsn_map.html"}, {"label": "gamma=5e-05 | score=0.9564", "gamma": 5e-05, "score": 0.9564435179565303, "nodes": 1297, "edges": 6854, "transitions": 22029, "compression_rate_dr": 0.4935812306330235, "distance_similarity_dl": 0.989868888650686, "ld_score": 1.4834501192837095, "cluster_coverage": 0.9050239234449761, "map_rel": "gamma_5e-05\\nlsn_map.html"}, {"label": "gamma=1e-05 | score=0.8677", "gamma": 1e-05, "score": 0.8676638851958114, "nodes": 1432, "edges": 7041, "transitions": 22606, "compression_rate_dr": 0.2057873768085553, "distance_similarity_dl": 0.999180011859442, "ld_score": 1.2049673886679972, "cluster_coverage": 0.9386594853381209, "map_rel": "gamma_1e-05\\nlsn_map.html"}];
+    const select = document.getElementById('map-select');
+    const frame = document.getElementById('map-frame');
+    methods.forEach((m, idx) => {
+      const opt = document.createElement('option');
+      opt.value = m.map_rel;
+      opt.textContent = `${idx + 1}. gamma=${m.gamma} (score=${m.score.toFixed(4)})`;
+      select.appendChild(opt);
+    });
+    select.addEventListener('change', () => {
+      frame.src = select.value;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+2026-02-22 19:13:42,547 - Region1-NLSN-GammaSweep - INFO - Auto-discovered latest PLSN summary: f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\PLSN_Extraction\results\tuning\region1_plsn_tuning_20260222_191235_summary.json
+2026-02-22 19:13:42,548 - Region1-NLSN-GammaSweep - INFO - Using PLSN params: k=1400, r=0.0000100, neighbor=4
+2026-02-22 19:13:42,549 - Region1-NLSN-GammaSweep - INFO - Loading data from f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\region_1_ais.parquet
+2026-02-22 19:13:43,043 - Region1-NLSN-GammaSweep - INFO - Starting NLSN Gamma Sweep...
+2026-02-22 19:13:57,040 - NLSN_Extraction.modules.nlsn_tuner - INFO - Prepared 5842 trajectories (214605 points) for NLSN extraction.
+2026-02-22 19:14:06,716 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_1e-05\feature_points.csv (170442 rows)
+2026-02-22 19:14:06,716 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:14:06,739 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:14:06,760 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=2 points per unit. Dense units found=7480/17935.
+2026-02-22 19:14:06,811 - NLSN_Extraction.modules.clustering - INFO - Identified 3003 clusters. Clustered points=159987, noise=10455.
+2026-02-22 19:14:06,815 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:14:06,815 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:14:08,315 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 8 degenerate clusters before alpha-shape.
+2026-02-22 19:14:08,315 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 1432 valid boundaries.
+2026-02-22 19:14:08,319 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:14:08,619 - pyogrio._io - INFO - Created 1,432 records
+2026-02-22 19:14:08,619 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_1e-05\boundaries.geojson
+2026-02-22 19:14:08,782 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_1e-05\nodes.csv (1432 rows)
+2026-02-22 19:14:08,787 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:14:08,916 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_1e-05\edges.csv (7041 rows)
+2026-02-22 19:14:08,941 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:14:09,544 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_1e-05\nlsn_map.html
+2026-02-22 19:14:09,562 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 1e-05 | nodes=1432 edges=7041 transitions=22606 LD=1.2050 coverage=0.9387 score=0.8677 runtime=12.51s
+2026-02-22 19:14:13,787 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_5e-05\feature_points.csv (108680 rows)
+2026-02-22 19:14:13,787 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:14:13,800 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:14:13,816 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=2 points per unit. Dense units found=7232/17554.
+2026-02-22 19:14:13,861 - NLSN_Extraction.modules.clustering - INFO - Identified 2879 clusters. Clustered points=98358, noise=10322.
+2026-02-22 19:14:13,861 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:14:13,861 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:14:14,932 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 14 degenerate clusters before alpha-shape.
+2026-02-22 19:14:14,932 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 1297 valid boundaries.
+2026-02-22 19:14:14,932 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:14:15,151 - pyogrio._io - INFO - Created 1,297 records
+2026-02-22 19:14:15,157 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_5e-05\boundaries.geojson
+2026-02-22 19:14:15,258 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_5e-05\nodes.csv (1297 rows)
+2026-02-22 19:14:15,261 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:14:15,344 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_5e-05\edges.csv (6854 rows)
+2026-02-22 19:14:15,356 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:14:15,895 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_5e-05\nlsn_map.html
+2026-02-22 19:14:15,913 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 5e-05 | nodes=1297 edges=6854 transitions=22029 LD=1.4835 coverage=0.9050 score=0.9564 runtime=6.31s
+2026-02-22 19:14:19,746 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0001\feature_points.csv (96388 rows)
+2026-02-22 19:14:19,746 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:14:19,761 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:14:19,773 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=17257/17257.
+2026-02-22 19:14:19,837 - NLSN_Extraction.modules.clustering - INFO - Identified 7621 clusters. Clustered points=96388, noise=0.
+2026-02-22 19:14:19,843 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:14:19,843 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:14:21,013 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 15 degenerate clusters before alpha-shape.
+2026-02-22 19:14:21,013 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 1399 valid boundaries.
+2026-02-22 19:14:21,015 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:14:21,235 - pyogrio._io - INFO - Created 1,399 records
+2026-02-22 19:14:21,235 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0001\boundaries.geojson
+2026-02-22 19:14:21,345 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0001\nodes.csv (1399 rows)
+2026-02-22 19:14:21,348 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:14:21,425 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0001\edges.csv (6854 rows)
+2026-02-22 19:14:21,437 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:14:22,019 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0001\nlsn_map.html
+2026-02-22 19:14:22,034 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 0.0001 | nodes=1399 edges=6854 transitions=22017 LD=1.5363 coverage=1.0000 score=0.9906 runtime=6.09s
+2026-02-22 19:14:25,607 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0002\feature_points.csv (89135 rows)
+2026-02-22 19:14:25,607 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:14:25,619 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:14:25,632 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=16892/16892.
+2026-02-22 19:14:25,695 - NLSN_Extraction.modules.clustering - INFO - Identified 7536 clusters. Clustered points=89135, noise=0.
+2026-02-22 19:14:25,702 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:14:25,702 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:14:26,847 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 15 degenerate clusters before alpha-shape.
+2026-02-22 19:14:26,850 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 1341 valid boundaries.
+2026-02-22 19:14:26,850 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:14:27,061 - pyogrio._io - INFO - Created 1,341 records
+2026-02-22 19:14:27,061 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0002\boundaries.geojson
+2026-02-22 19:14:27,165 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0002\nodes.csv (1341 rows)
+2026-02-22 19:14:27,169 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:14:27,244 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0002\edges.csv (6708 rows)
+2026-02-22 19:14:27,257 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:14:27,794 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0002\nlsn_map.html
+2026-02-22 19:14:27,811 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 0.0002 | nodes=1341 edges=6708 transitions=21617 LD=1.5654 coverage=1.0000 score=1.0013 runtime=5.74s
+2026-02-22 19:14:31,219 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0005\feature_points.csv (81350 rows)
+2026-02-22 19:14:31,223 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:14:31,232 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:14:31,242 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=16382/16382.
+2026-02-22 19:14:31,301 - NLSN_Extraction.modules.clustering - INFO - Identified 7423 clusters. Clustered points=81350, noise=0.
+2026-02-22 19:14:31,306 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:14:31,306 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:14:32,373 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 12 degenerate clusters before alpha-shape.
+2026-02-22 19:14:32,373 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 1261 valid boundaries.
+2026-02-22 19:14:32,382 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:14:32,577 - pyogrio._io - INFO - Created 1,261 records
+2026-02-22 19:14:32,577 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0005\boundaries.geojson
+2026-02-22 19:14:32,682 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0005\nodes.csv (1261 rows)
+2026-02-22 19:14:32,686 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:14:32,764 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0005\edges.csv (6449 rows)
+2026-02-22 19:14:32,773 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:14:33,319 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p0005\nlsn_map.html
+2026-02-22 19:14:33,334 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 0.0005 | nodes=1261 edges=6449 transitions=21126 LD=1.5979 coverage=1.0000 score=1.0139 runtime=5.49s
+2026-02-22 19:14:36,486 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p001\feature_points.csv (75271 rows)
+2026-02-22 19:14:36,487 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:14:36,494 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:14:36,507 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=15883/15883.
+2026-02-22 19:14:36,561 - NLSN_Extraction.modules.clustering - INFO - Identified 7338 clusters. Clustered points=75271, noise=0.
+2026-02-22 19:14:36,569 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:14:36,569 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:14:37,593 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 12 degenerate clusters before alpha-shape.
+2026-02-22 19:14:37,595 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 1214 valid boundaries.
+2026-02-22 19:14:37,595 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:14:37,784 - pyogrio._io - INFO - Created 1,214 records
+2026-02-22 19:14:37,784 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p001\boundaries.geojson
+2026-02-22 19:14:37,882 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p001\nodes.csv (1214 rows)
+2026-02-22 19:14:37,884 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:14:37,949 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p001\edges.csv (6399 rows)
+2026-02-22 19:14:37,965 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:14:38,502 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p001\nlsn_map.html
+2026-02-22 19:14:38,516 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 0.001 | nodes=1214 edges=6399 transitions=20819 LD=1.6218 coverage=1.0000 score=1.0236 runtime=5.15s
+2026-02-22 19:14:41,465 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p002\feature_points.csv (68699 rows)
+2026-02-22 19:14:41,466 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:14:41,476 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:14:41,485 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=15323/15323.
+2026-02-22 19:14:41,540 - NLSN_Extraction.modules.clustering - INFO - Identified 7184 clusters. Clustered points=68699, noise=0.
+2026-02-22 19:14:41,544 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:14:41,544 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:14:42,586 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 14 degenerate clusters before alpha-shape.
+2026-02-22 19:14:42,586 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 1151 valid boundaries.
+2026-02-22 19:14:42,589 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:14:42,773 - pyogrio._io - INFO - Created 1,151 records
+2026-02-22 19:14:42,773 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p002\boundaries.geojson
+2026-02-22 19:14:42,865 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p002\nodes.csv (1151 rows)
+2026-02-22 19:14:42,868 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:14:42,932 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p002\edges.csv (6205 rows)
+2026-02-22 19:14:42,944 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:14:43,423 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p002\nlsn_map.html
+2026-02-22 19:14:43,437 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 0.002 | nodes=1151 edges=6205 transitions=20331 LD=1.6450 coverage=1.0000 score=1.0332 runtime=4.89s
+2026-02-22 19:14:46,120 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p005\feature_points.csv (59374 rows)
+2026-02-22 19:14:46,120 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:14:46,123 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:14:46,138 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=14352/14352.
+2026-02-22 19:14:46,189 - NLSN_Extraction.modules.clustering - INFO - Identified 7042 clusters. Clustered points=59374, noise=0.
+2026-02-22 19:14:46,193 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:14:46,193 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:14:47,052 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 15 degenerate clusters before alpha-shape.
+2026-02-22 19:14:47,053 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 1058 valid boundaries.
+2026-02-22 19:14:47,055 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:14:47,245 - pyogrio._io - INFO - Created 1,058 records
+2026-02-22 19:14:47,246 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p005\boundaries.geojson
+2026-02-22 19:14:47,332 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p005\nodes.csv (1058 rows)
+2026-02-22 19:14:47,336 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:14:47,396 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p005\edges.csv (6055 rows)
+2026-02-22 19:14:47,406 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:14:47,844 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p005\nlsn_map.html
+2026-02-22 19:14:47,857 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 0.005 | nodes=1058 edges=6055 transitions=19790 LD=1.6725 coverage=1.0000 score=1.0456 runtime=4.39s
+2026-02-22 19:14:50,299 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p01\feature_points.csv (52069 rows)
+2026-02-22 19:14:50,299 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:14:50,311 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:14:50,318 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=13414/13414.
+2026-02-22 19:14:50,367 - NLSN_Extraction.modules.clustering - INFO - Identified 6923 clusters. Clustered points=52069, noise=0.
+2026-02-22 19:14:50,370 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:14:50,370 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:14:51,151 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 15 degenerate clusters before alpha-shape.
+2026-02-22 19:14:51,155 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 969 valid boundaries.
+2026-02-22 19:14:51,157 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:14:51,311 - pyogrio._io - INFO - Created 969 records
+2026-02-22 19:14:51,311 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p01\boundaries.geojson
+2026-02-22 19:14:51,386 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p01\nodes.csv (969 rows)
+2026-02-22 19:14:51,388 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:14:51,445 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p01\edges.csv (5949 rows)
+2026-02-22 19:14:51,454 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:14:51,873 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p01\nlsn_map.html
+2026-02-22 19:14:51,886 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 0.01 | nodes=969 edges=5949 transitions=19859 LD=1.6901 coverage=1.0000 score=1.0619 runtime=4.00s
+2026-02-22 19:14:53,978 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p02\feature_points.csv (44445 rows)
+2026-02-22 19:14:53,978 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:14:53,984 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:14:53,992 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=12311/12311.
+2026-02-22 19:14:54,031 - NLSN_Extraction.modules.clustering - INFO - Identified 6658 clusters. Clustered points=44445, noise=0.
+2026-02-22 19:14:54,039 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:14:54,039 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:14:54,933 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 15 degenerate clusters before alpha-shape.
+2026-02-22 19:14:54,933 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 916 valid boundaries.
+2026-02-22 19:14:54,936 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:14:55,082 - pyogrio._io - INFO - Created 916 records
+2026-02-22 19:14:55,082 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p02\boundaries.geojson
+2026-02-22 19:14:55,152 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p02\nodes.csv (916 rows)
+2026-02-22 19:14:55,157 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:14:55,215 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p02\edges.csv (5972 rows)
+2026-02-22 19:14:55,223 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:14:55,652 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p02\nlsn_map.html
+2026-02-22 19:14:55,665 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 0.02 | nodes=916 edges=5972 transitions=18761 LD=1.7000 coverage=1.0000 score=1.0680 runtime=3.75s
+2026-02-22 19:14:57,291 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p05\feature_points.csv (34497 rows)
+2026-02-22 19:14:57,292 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:14:57,297 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:14:57,303 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=10396/10396.
+2026-02-22 19:14:57,338 - NLSN_Extraction.modules.clustering - INFO - Identified 5953 clusters. Clustered points=34497, noise=0.
+2026-02-22 19:14:57,342 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:14:57,342 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:14:58,007 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 11 degenerate clusters before alpha-shape.
+2026-02-22 19:14:58,008 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 776 valid boundaries.
+2026-02-22 19:14:58,008 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:14:58,133 - pyogrio._io - INFO - Created 776 records
+2026-02-22 19:14:58,133 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p05\boundaries.geojson
+2026-02-22 19:14:58,194 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p05\nodes.csv (776 rows)
+2026-02-22 19:14:58,194 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:14:58,243 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p05\edges.csv (5540 rows)
+2026-02-22 19:14:58,250 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:14:58,639 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p05\nlsn_map.html
+2026-02-22 19:14:58,651 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 0.05 | nodes=776 edges=5540 transitions=15663 LD=1.6809 coverage=1.0000 score=1.0657 runtime=2.95s
+2026-02-22 19:15:00,045 - NLSN_Extraction.modules.nlsn_generator - INFO - Feature points saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p1\feature_points.csv (27659 rows)
+2026-02-22 19:15:00,045 - NLSN_Extraction.modules.clustering - INFO - Starting CLIQUE clustering (K=1400, r=0.00001000, min_dense_points=None, neighbor_mode=4, require_cuda=False)
+2026-02-22 19:15:00,050 - NLSN_Extraction.modules.clustering - INFO - Using CPU grid indexing (require_cuda=False).
+2026-02-22 19:15:00,054 - NLSN_Extraction.modules.clustering - INFO - Dense threshold=1 points per unit. Dense units found=8851/8851.
+2026-02-22 19:15:00,086 - NLSN_Extraction.modules.clustering - INFO - Identified 5221 clusters. Clustered points=27659, noise=0.
+2026-02-22 19:15:00,088 - NLSN_Extraction.modules.boundary_extractor - WARNING - alphashape package not available. Falling back to convex hull boundaries.
+2026-02-22 19:15:00,088 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracting boundaries with alpha=0.01...
+2026-02-22 19:15:00,699 - NLSN_Extraction.modules.boundary_extractor - INFO - Skipped 14 degenerate clusters before alpha-shape.
+2026-02-22 19:15:00,699 - NLSN_Extraction.modules.boundary_extractor - INFO - Extracted 685 valid boundaries.
+2026-02-22 19:15:00,707 - NLSN_Extraction.modules.nlsn_generator - INFO - Exporting NLSN nodes and boundaries...
+2026-02-22 19:15:00,815 - pyogrio._io - INFO - Created 685 records
+2026-02-22 19:15:00,815 - NLSN_Extraction.modules.nlsn_generator - INFO - Boundaries saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p1\boundaries.geojson
+2026-02-22 19:15:00,879 - NLSN_Extraction.modules.nlsn_generator - INFO - Nodes saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p1\nodes.csv (685 rows)
+2026-02-22 19:15:00,879 - NLSN_Extraction.modules.nlsn_generator - INFO - Generating NLSN directed edges from clustered feature sequences...
+2026-02-22 19:15:00,923 - NLSN_Extraction.modules.nlsn_generator - INFO - Edges saved to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p1\edges.csv (4825 rows)
+2026-02-22 19:15:00,930 - NLSN_Extraction.modules.visualizer - INFO - Generating standalone PLSN dashboard HTML...
+2026-02-22 19:15:01,294 - NLSN_Extraction.modules.visualizer - INFO - Saved PLSN dashboard HTML to f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\gamma_0p1\nlsn_map.html
+2026-02-22 19:15:01,311 - NLSN_Extraction.modules.nlsn_tuner - INFO - Gamma 0.1 | nodes=685 edges=4825 transitions=11970 LD=1.6257 coverage=1.0000 score=1.0473 runtime=2.63s
+2026-02-22 19:15:01,349 - NLSN_Extraction.modules.nlsn_tuner - INFO - NLSN gamma sweep complete: f:\PyTorch_GPU\ISLs\CEE-International_shipping_lanes_\Region_wise_netwoks\region_1\NLSN_Extraction\results\nlsn_gamma_sweep_results.csv
+2026-02-22 19:15:01,355 - Region1-NLSN-GammaSweep - INFO - Run complete. Best gamma=0.02 score=1.0680 nodes=916 edges=5972
