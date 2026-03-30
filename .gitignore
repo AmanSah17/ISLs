@@ -2,3 +2,7 @@
 *.class
 *.csv
 *.MF
+pipeline/output/
+pipeline/output_finegrid/
+__pycache__/
+*.pyc
